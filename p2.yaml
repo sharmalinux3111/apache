@@ -1,0 +1,13 @@
+---
+- hosts: server1
+  tasks:
+   - file:
+      path: /tmp/testdir
+      state: directory
+   - copy:
+      src: /tmp/abc.txt
+      dest: /tmp/
+   - service:
+      name: httpd
+      state: restarted
+...
